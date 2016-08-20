@@ -30,11 +30,14 @@
 // Determines whether or not the device that is currently running 
 // this game is the host.
 IsHost                  = true;
+
+// The port on which network data is transfered.
 dataTransferPort        = 37373;
+
 
 if (isHost)
 {
-    numberOfPlayers     = 4;
+    maxNumberOfPlayers     = 4;
 
     // Create the server:
     Server = network_create_server(network_socket_tcp, 
@@ -43,13 +46,18 @@ if (isHost)
 
 else // is not the host
 {
+    // IP Address/URL of the host device.
     hostIpAddress   = "127.0.0.1";
 
     // Create the player's socket:
     playerSocket = network_create_socket(network_socket_tcp);
 
     // Connect to the server:
-    network_connect(hostSocket, hostIpAddress, dataTransferPort);
+    if(network_connect(hostSocket, hostIpAddress, dataTransferPort))
+    {
+        // Allocate 1 MB for the buffer.
+        packetBuffer = buffer_create(1024, buffer_grow, 1);
+    }
 }
 </string>
           </argument>
