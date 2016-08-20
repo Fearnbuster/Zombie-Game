@@ -23,12 +23,9 @@
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-<<<<<<< HEAD
     <objects name="Networking Objects">
       <object>objects\obj_Server</object>
     </objects>
-  </objects>
-=======
     <objects name="Vegetation">
       <objects name="Trees, Bushes, Grass">
         <object>objects\obj_dead_tree_moss</object>
@@ -45,7 +42,6 @@
   <rooms name="rooms">
     <room>rooms\rm_room</room>
   </rooms>
->>>>>>> origin/master
   <help>
     <rtf>help.rtf</rtf>
   </help>
