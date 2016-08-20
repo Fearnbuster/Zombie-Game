@@ -5,9 +5,40 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprites name="Vegetation">
+      <sprites name="Trees, Bushes, Grass">
+        <sprite>sprites\spr_dead_tree</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Ground">
+      <sprites name="Grass, Dirt">
+        <sprite>sprites\spr_grass</sprite>
+        <sprite>sprites\spr_dirt</sprite>
+      </sprites>
+    </sprites>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\bkgd_night</background>
+  </backgrounds>
   <paths name="paths"/>
+  <objects name="objects">
+    <objects name="Vegetation">
+      <objects name="Trees, Bushes, Grass">
+        <object>objects\obj_dead_tree_moss</object>
+        <object>objects\obj_dead_tree_moss_background</object>
+      </objects>
+    </objects>
+    <objects name="Ground">
+      <objects name="Grass, Dirt">
+        <object>objects\obj_grass</object>
+        <object>objects\obj_dirt</object>
+      </objects>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_room</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
