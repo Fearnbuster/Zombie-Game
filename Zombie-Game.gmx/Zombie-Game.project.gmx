@@ -9,12 +9,13 @@
     <sprites name="Vegetation">
       <sprites name="Trees, Bushes, Grass">
         <sprite>sprites\spr_dead_tree</sprite>
+        <sprite>sprites\spr_tall_grass</sprite>
       </sprites>
     </sprites>
     <sprites name="Ground">
       <sprites name="Grass, Dirt">
-        <sprite>sprites\spr_grass</sprite>
-        <sprite>sprites\spr_dirt</sprite>
+        <sprite>sprites\spr_grass_block</sprite>
+        <sprite>sprites\spr_dirt_block</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -30,12 +31,13 @@
       <objects name="Trees, Bushes, Grass">
         <object>objects\obj_dead_tree_moss</object>
         <object>objects\obj_dead_tree_moss_background</object>
+        <object>objects\obj_grass</object>
       </objects>
     </objects>
     <objects name="Ground">
       <objects name="Grass, Dirt">
-        <object>objects\obj_grass</object>
-        <object>objects\obj_dirt</object>
+        <object>objects\obj_grass_block</object>
+        <object>objects\obj_dirt_block</object>
       </objects>
     </objects>
   </objects>
