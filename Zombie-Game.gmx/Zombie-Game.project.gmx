@@ -9,7 +9,11 @@
     <sprites name="Characters">
       <sprites name="Player">
         <sprite>sprites\spr_player_walking</sprite>
-        <sprite>sprites\spr_player_arms_m16</sprite>
+        <sprites name="Guns">
+          <sprite>sprites\spr_player_m16</sprite>
+          <sprite>sprites\spr_player_M249</sprite>
+          <sprite>sprites\spr_player_M1911</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Vegetation">
