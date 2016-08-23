@@ -15,6 +15,9 @@
           <sprite>sprites\spr_player_M1911</sprite>
         </sprites>
       </sprites>
+      <sprites name="Zombies">
+        <sprite>sprites\spr_zombie</sprite>
+      </sprites>
     </sprites>
     <sprites name="Vegetation">
       <sprites name="Trees, Bushes, Grass">
