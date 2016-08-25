@@ -36,9 +36,14 @@
       <sprite>sprites\spr_dont_delete</sprite>
       <sprite>sprites\spr_fog_1</sprite>
       <sprite>sprites\spr_fog_2</sprite>
+      <sprite>sprites\spr_barrier</sprite>
     </sprites>
     <sprites name="Props">
       <sprite>sprites\spr_gravestone_cross_crooked</sprite>
+    </sprites>
+    <sprites name="Menus">
+      <sprite>sprites\spr_game_start_button</sprite>
+      <sprite>sprites\spr_game_exit_button</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -74,12 +79,19 @@
         <object>objects\obj_grass_block</object>
         <object>objects\obj_dirt_block</object>
       </objects>
+      <object>objects\obj_ground_parent</object>
+      <object>objects\obj_barrier</object>
     </objects>
     <objects name="Props">
       <object>objects\obj_gravestone_cross_crooked</object>
     </objects>
+    <objects name="Menus">
+      <object>objects\obj_game_start_button</object>
+      <object>objects\obj_game_exit_button</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_menu</room>
     <rooms name="Dark Forest">
       <room>rooms\rm_dark_forest_area_1</room>
     </rooms>
