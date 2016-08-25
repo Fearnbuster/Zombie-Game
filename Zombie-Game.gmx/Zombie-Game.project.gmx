@@ -16,7 +16,7 @@
         </sprites>
       </sprites>
       <sprites name="Zombies">
-        <sprite>sprites\spr_zombie</sprite>
+        <sprite>sprites\spr_zombie_1</sprite>
       </sprites>
     </sprites>
     <sprites name="Vegetation">
@@ -58,6 +58,9 @@
       <objects name="Player">
         <object>objects\obj_player</object>
         <object>objects\obj_player_arms</object>
+      </objects>
+      <objects name="Zombies">
+        <object>objects\obj_zombie_1</object>
       </objects>
     </objects>
     <objects name="Vegetation">
