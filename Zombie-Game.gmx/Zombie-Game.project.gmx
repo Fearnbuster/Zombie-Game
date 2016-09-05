@@ -45,11 +45,15 @@
       <sprite>sprites\spr_game_start_button</sprite>
       <sprite>sprites\spr_game_exit_button</sprite>
     </sprites>
+    <sprite>sprites\spr_bullet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkgd_night</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\fnt_hud</font>
+  </fonts>
   <objects name="objects">
     <objects name="Networking Objects">
       <object>objects\obj_Server</object>
@@ -92,6 +96,8 @@
       <object>objects\obj_game_start_button</object>
       <object>objects\obj_game_exit_button</object>
     </objects>
+    <object>objects\obj_bullet</object>
+    <object>objects\obj_hud</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
