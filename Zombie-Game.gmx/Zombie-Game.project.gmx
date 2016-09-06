@@ -65,6 +65,7 @@
       </objects>
       <objects name="Zombies">
         <object>objects\obj_zombie_1</object>
+        <object>objects\obj_zombie_spawner</object>
       </objects>
     </objects>
     <objects name="Vegetation">
@@ -88,9 +89,6 @@
       </objects>
       <object>objects\obj_ground_parent</object>
       <object>objects\obj_barrier</object>
-    </objects>
-    <objects name="Props">
-      <object>objects\obj_gravestone_cross_crooked</object>
     </objects>
     <objects name="Menus">
       <object>objects\obj_game_start_button</object>
