@@ -9,6 +9,37 @@
     <sprites name="Characters">
       <sprites name="Player">
         <sprite>sprites\spr_player_walking</sprite>
+        <sprite>sprites\spr_player_hit_box</sprite>
+        <sprite>sprites\spr_player_hat</sprite>
+        <sprite>sprites\spr_player_face</sprite>
+        <sprite>sprites\spr_player_bandana</sprite>
+        <sprite>sprites\spr_shirt</sprite>
+        <sprites name="Player Pants">
+          <sprite>sprites\spr_player_pants_black</sprite>
+          <sprite>sprites\spr_player_pants_grey</sprite>
+          <sprite>sprites\spr_player_pants_white</sprite>
+          <sprite>sprites\spr_player_pants_red</sprite>
+          <sprite>sprites\spr_player_pants_gold</sprite>
+          <sprite>sprites\spr_player_pants_green</sprite>
+          <sprite>sprites\spr_player_pants_blue</sprite>
+          <sprite>sprites\spr_player_pants_pale_blue</sprite>
+          <sprite>sprites\spr_player_pants_purple</sprite>
+          <sprite>sprites\spr_player_pants_pink</sprite>
+          <sprite>sprites\spr_player_pants_orange</sprite>
+        </sprites>
+        <sprites name="Player Shoes">
+          <sprite>sprites\spr_player_shoes_black</sprite>
+          <sprite>sprites\spr_player_shoes_grey</sprite>
+          <sprite>sprites\spr_player_shoes_white</sprite>
+          <sprite>sprites\spr_player_shoes_red</sprite>
+          <sprite>sprites\spr_player_shoes_gold</sprite>
+          <sprite>sprites\spr_player_shoes_green</sprite>
+          <sprite>sprites\spr_player_shoes_blue</sprite>
+          <sprite>sprites\spr_player_shoes_pale_blue</sprite>
+          <sprite>sprites\spr_player_shoes_purple</sprite>
+          <sprite>sprites\spr_player_shoes_pink</sprite>
+          <sprite>sprites\spr_player_shoes_orange</sprite>
+        </sprites>
         <sprites name="Guns">
           <sprite>sprites\spr_player_m16</sprite>
           <sprite>sprites\spr_player_M249</sprite>
@@ -46,6 +77,7 @@
       <sprite>sprites\spr_game_exit_button</sprite>
     </sprites>
     <sprite>sprites\spr_bullet</sprite>
+    <sprite>sprites\spr_image_arrow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkgd_night</background>
@@ -62,6 +94,12 @@
       <objects name="Player">
         <object>objects\obj_player</object>
         <object>objects\obj_player_arms</object>
+        <object>objects\obj_player_hat</object>
+        <object>objects\obj_player_face</object>
+        <object>objects\obj_player_bandana</object>
+        <object>objects\obj_player_shirt</object>
+        <object>objects\obj_player_pants</object>
+        <object>objects\obj_player_shoes</object>
       </objects>
       <objects name="Zombies">
         <object>objects\obj_zombie_1</object>
@@ -96,6 +134,20 @@
     </objects>
     <object>objects\obj_bullet</object>
     <object>objects\obj_hud</object>
+    <objects name="Customization Arrows (Temporary)">
+      <object>objects\obj_bandana_arrow_right</object>
+      <object>objects\obj_hat_arrow_left</object>
+      <object>objects\obj_hat_arrow_right</object>
+      <object>objects\obj_pants_arrow_right</object>
+      <object>objects\obj_shoes_arrow_left</object>
+      <object>objects\obj_shoes_arrow_right</object>
+      <object>objects\obj_pants_arrow_left</object>
+      <object>objects\obj_shirt_arrow_right</object>
+      <object>objects\obj_shirt_arrow_left</object>
+      <object>objects\obj_bandana_arrow_left</object>
+      <object>objects\obj_face_arrow_right</object>
+      <object>objects\obj_face_arrow_left</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
