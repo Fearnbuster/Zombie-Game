@@ -25,16 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Changing Player Pants Image Index By -1
+            <string>///Changing Player Backpack Image Index By +1
 
-if (obj_player_pants.PantsNumber = 0)
-    {
-    obj_player_pants.PantsNumber = 10
-    }
-else
-    {
-    obj_player_pants.PantsNumber -= 1;
-    }
+obj_player_backpack.image_index += 1;
 </string>
           </argument>
         </arguments>

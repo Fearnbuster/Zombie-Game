@@ -10,10 +10,12 @@
       <sprites name="Player">
         <sprite>sprites\spr_player_walking</sprite>
         <sprite>sprites\spr_player_hit_box</sprite>
+        <sprite>sprites\spr_bullet</sprite>
         <sprite>sprites\spr_player_hat</sprite>
         <sprite>sprites\spr_player_face</sprite>
         <sprite>sprites\spr_player_bandana</sprite>
         <sprite>sprites\spr_shirt</sprite>
+        <sprite>sprites\spr_player_backpack</sprite>
         <sprites name="Player Pants">
           <sprite>sprites\spr_player_pants_black</sprite>
           <sprite>sprites\spr_player_pants_grey</sprite>
@@ -41,9 +43,9 @@
           <sprite>sprites\spr_player_shoes_orange</sprite>
         </sprites>
         <sprites name="Guns">
+          <sprite>sprites\spr_player_M1911</sprite>
           <sprite>sprites\spr_player_m16</sprite>
           <sprite>sprites\spr_player_M249</sprite>
-          <sprite>sprites\spr_player_M1911</sprite>
         </sprites>
       </sprites>
       <sprites name="Zombies">
@@ -75,9 +77,10 @@
     <sprites name="Menus">
       <sprite>sprites\spr_game_start_button</sprite>
       <sprite>sprites\spr_game_exit_button</sprite>
+      <sprite>sprites\spr_customization</sprite>
+      <sprite>sprites\spr_back_button</sprite>
+      <sprite>sprites\spr_image_arrow</sprite>
     </sprites>
-    <sprite>sprites\spr_bullet</sprite>
-    <sprite>sprites\spr_image_arrow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkgd_night</background>
@@ -93,13 +96,16 @@
     <objects name="Characters">
       <objects name="Player">
         <object>objects\obj_player</object>
-        <object>objects\obj_player_arms</object>
+        <object>objects\obj_player_gun</object>
         <object>objects\obj_player_hat</object>
         <object>objects\obj_player_face</object>
         <object>objects\obj_player_bandana</object>
         <object>objects\obj_player_shirt</object>
+        <object>objects\obj_player_backpack</object>
         <object>objects\obj_player_pants</object>
         <object>objects\obj_player_shoes</object>
+        <object>objects\obj_bullet</object>
+        <object>objects\obj_hud</object>
       </objects>
       <objects name="Zombies">
         <object>objects\obj_zombie_1</object>
@@ -131,26 +137,29 @@
     <objects name="Menus">
       <object>objects\obj_game_start_button</object>
       <object>objects\obj_game_exit_button</object>
-    </objects>
-    <object>objects\obj_bullet</object>
-    <object>objects\obj_hud</object>
-    <objects name="Customization Arrows (Temporary)">
-      <object>objects\obj_bandana_arrow_right</object>
-      <object>objects\obj_hat_arrow_left</object>
-      <object>objects\obj_hat_arrow_right</object>
-      <object>objects\obj_pants_arrow_right</object>
-      <object>objects\obj_shoes_arrow_left</object>
-      <object>objects\obj_shoes_arrow_right</object>
-      <object>objects\obj_pants_arrow_left</object>
-      <object>objects\obj_shirt_arrow_right</object>
-      <object>objects\obj_shirt_arrow_left</object>
-      <object>objects\obj_bandana_arrow_left</object>
-      <object>objects\obj_face_arrow_right</object>
-      <object>objects\obj_face_arrow_left</object>
+      <object>objects\obj_customization_arrow</object>
+      <object>objects\obj_back_arrow</object>
+      <objects name="Customization Arrows (Temporary)">
+        <object>objects\obj_hat_arrow_left</object>
+        <object>objects\obj_hat_arrow_right</object>
+        <object>objects\obj_face_arrow_left</object>
+        <object>objects\obj_face_arrow_right</object>
+        <object>objects\obj_bandana_arrow_left</object>
+        <object>objects\obj_bandana_arrow_right</object>
+        <object>objects\obj_shirt_arrow_left</object>
+        <object>objects\obj_shirt_arrow_right</object>
+        <object>objects\obj_backpack_arrow_left</object>
+        <object>objects\obj_backpack_arrow_right</object>
+        <object>objects\obj_pants_arrow_left</object>
+        <object>objects\obj_pants_arrow_right</object>
+        <object>objects\obj_shoes_arrow_left</object>
+        <object>objects\obj_shoes_arrow_right</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_menu</room>
+    <room>rooms\rm_main_menu</room>
+    <room>rooms\rm_menu_customization</room>
     <rooms name="Dark Forest">
       <room>rooms\rm_dark_forest_area_1</room>
     </rooms>

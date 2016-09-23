@@ -268,7 +268,8 @@ effect_create_above(ef_firework,x,y,0,c_red);
             <kind>1</kind>
             <string>///Draw Health
 
-draw_healthbar(x - 32,y - 40,x + 32,y - 32,Health,c_black,c_red,c_green,0,false,true);
+draw_healthbar(x - 32,y - 40,x,y - 32,Health,c_black,c_red,c_green,1,true,false);
+draw_healthbar(x,y - 40,x + 32,y - 32,Health,c_black,c_red,c_green,0,true,false);
 </string>
           </argument>
         </arguments>

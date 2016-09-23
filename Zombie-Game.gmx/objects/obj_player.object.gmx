@@ -90,6 +90,7 @@ instance_create(x,y,obj_player_hat);
 instance_create(x,y,obj_player_face);
 instance_create(x,y,obj_player_bandana);
 instance_create(x,y,obj_player_shirt);
+instance_create(x,y,obj_player_backpack);
 instance_create(x,y,obj_player_pants);
 instance_create(x,y,obj_player_shoes);
 </string>
