@@ -29,19 +29,40 @@
 
 // Determines whether or not the device that is currently running 
 // this game is the host.
-IsHost                  = true;
+isHost                  = true;
 
 // The port on which network data is transfered.
 dataTransferPort        = 37373;
 
+// Indicator of how many frames should elapse between each 
+// network update of the server. 
+// The server's tps (ticks per second) is equal to the
+// the game's fps divided by the server's network timer
+// (fps/timer).
+// Example: If the game runs at 60fps and the server has a 15 
+// frame timer, then the server will send network updates 4 times 
+// per second (60fps/15 frames = 4tps). 
+// NOTE: Setting the value here is needed only if this device is 
+// the host, otherwise, it is retrieved from the server.
+// NOTE: Unless the network bandwith is very low, you should keep 
+// the update timer small enough that the server tps never falls 
+// below 10 (a greater value may be preferable).
+serverUpdateTimer = 15;
 
+
+// ----------------------------------------
 if (isHost)
 {
     maxNumberOfPlayers     = 4;
 
     // Create the server:
-    Server = network_create_server(network_socket_tcp, 
-                dataTransferPort, numberOfPlayers);
+    serverSocket = network_create_server(network_socket_tcp, 
+                dataTransferPort, maxNumberOfPlayers);
+                
+    if (serverSocket &lt; 0)
+    {
+        show_error("Cannot create server!", false);
+    }
 }
 
 else // is not the host
@@ -49,14 +70,103 @@ else // is not the host
     // IP Address/URL of the host device.
     hostIpAddress   = "127.0.0.1";
 
+    
+    // ----------------------------------------
     // Create the player's socket:
-    playerSocket = network_create_socket(network_socket_tcp);
-
+    networkSocket = network_create_socket(network_socket_tcp);
+    
+    if (networkSocket &lt; 0)
+    {
+        show_error("Cannot create network socket!", false);
+    }
+    
+    
+    // ----------------------------------------
     // Connect to the server:
-    if(network_connect(hostSocket, hostIpAddress, dataTransferPort))
+    if(network_connect(networkSocket, hostIpAddress, dataTransferPort))
     {
         // Allocate 1 MB for the buffer.
         packetBuffer = buffer_create(1024, buffer_grow, 1);
+    }
+    
+    else
+    {
+        show_error("Cannot connect to the given server!", false);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Deallocate resources
+
+ds_map_destroy(allReplicaObjects);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="68">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Parse packet
+
+var eventID = ds_map_find_value(async_load, "id");
+
+// ----------------------------------------
+if (eventID == serverSocket)
+{
+    var eventType = ds_map_find_value(async_load, "type");
+    
+    // ----------------------------------------
+    switch (eventType)
+    {
+        case network_type_connect:
+        {
+        
+        }
+        
+        case network_type_disconnect:
+        {
+        
+        }
+        
+        case network_type_data:
+        {
+        
+        }
     }
 }
 </string>

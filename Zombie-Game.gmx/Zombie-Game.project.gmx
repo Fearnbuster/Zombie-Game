@@ -22,9 +22,97 @@
     <background>background\bkgd_night</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Network">
+      <script>scripts\scr_handleConnect.gml</script>
+      <script>scripts\scr_handleDisconnect.gml</script>
+      <script>scripts\scr_handleData.gml</script>
+      <scripts name="Replica">
+        <scripts name="Writing To Packet">
+          <script>scripts\scr_writeObjectToPacket.gml</script>
+          <script>scripts\scr_writeProxyObjectError.gml</script>
+        </scripts>
+        <scripts name="Reading From Packet">
+          <script>scripts\scr_readObjectFromPacket.gml</script>
+        </scripts>
+        <scripts name="Components">
+          <scripts name="Aggregate">
+            <script>scripts\scr_createAggregateComponent.gml</script>
+          </scripts>
+          <scripts name="Body Orientation">
+            <script>scripts\scr_createOrientationComponent.gml</script>
+          </scripts>
+          <scripts name="Character">
+            <script>scripts\scr_createCharacterComponent.gml</script>
+            <script>scripts\scr_writeCharacterComponent.gml</script>
+            <script>scripts\scr_readCharacterComponent.gml</script>
+          </scripts>
+          <scripts name="Controllable Physics">
+            <scripts name="Intelligent">
+              <script>scripts\scr_writeControllabePhysicsComponent_intelligent.gml</script>
+              <script>scripts\scr_createControllablePhysicsComponent_intelligent.gml</script>
+              <script>scripts\scr_readControllablePhyscisComponent_intelligent.gml</script>
+            </scripts>
+            <scripts name="Proxy">
+              <script>scripts\scr_writeControllablePhysicsComponent.gml</script>
+              <script>scripts\scr_createControllablePhysicsComponent.gml</script>
+              <script>scripts\scr_readControllablePhysicsComponent.gml</script>
+            </scripts>
+          </scripts>
+          <scripts name="Destructible ">
+            <script>scripts\scr_createDestructibleComponent.gml</script>
+            <script>scripts\scr_writeDestructibleComponent.gml</script>
+            <script>scripts\scr_readDestructibleComponent.gml</script>
+          </scripts>
+          <script>scripts\scr_writeComponent_default.gml</script>
+          <scripts name="Static Physics">
+            <scripts name="Intelligent">
+              <script>scripts\scr_createStaticPhysicsComponent_intelligent.gml</script>
+              <script>scripts\scr_readStaticPhysicsComponent_intelligent.gml</script>
+              <script>scripts\scr_writeStaticPhysicsComponent_intelligent.gml</script>
+            </scripts>
+            <scripts name="Proxy">
+              <script>scripts\scr_createStaticPhysicsComponent.gml</script>
+              <script>scripts\scr_readStaticPhysicsComponent.gml</script>
+              <script>scripts\scr_writeStaticPhysicsComponent.gml</script>
+            </scripts>
+          </scripts>
+        </scripts>
+        <scripts name="Replica Manager">
+          <script>scripts\scr_constructReplicaObject.gml</script>
+          <script>scripts\scr_destructReplicaObject.gml</script>
+          <script>scripts\scr_serializeReplicaObject.gml</script>
+          <script>scripts\scr_updateReplicaNetwork.gml</script>
+        </scripts>
+      </scripts>
+    </scripts>
+  </scripts>
   <objects name="objects">
     <objects name="Networking Objects">
-      <object>objects\obj_Server</object>
+      <objects name="Components">
+        <object>objects\obj_characterComponent</object>
+        <object>objects\obj_controllablePhysicsComponent</object>
+        <object>objects\obj_destructibleComponent</object>
+        <object>objects\obj_staticPhysicsComponent</object>
+        <object>objects\obj_statsComponent</object>
+        <objects name="Parent">
+          <object>objects\obj_replicaComponentParent</object>
+        </objects>
+        <objects name="Intelligent">
+          <object>objects\obj_controllablePhysicsComponent_intelligent</object>
+          <object>objects\obj_staticPhysicsComponent_intelligent</object>
+        </objects>
+      </objects>
+      <object>objects\obj_server</object>
+      <object>objects\obj_client</object>
+      <objects name="Replica">
+        <object>objects\obj_replicaManager</object>
+        <objects name="Objects">
+          <object>objects\obj_replicaIntelligentObject</object>
+          <object>objects\obj_replicaProxyObject</object>
+          <object>objects\obj_replicaObject</object>
+        </objects>
+      </objects>
     </objects>
     <objects name="Vegetation">
       <objects name="Trees, Bushes, Grass">
@@ -38,10 +126,19 @@
         <object>objects\obj_dirt</object>
       </objects>
     </objects>
+    <object>objects\obj_gameInitializer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_room</room>
   </rooms>
+  <constants number="6">
+    <constant name="REPLICA_CONSTRUCTION_PACKET">1</constant>
+    <constant name="REPLICA_SERIALIZATION_PACKET">2</constant>
+    <constant name="REPLICA_DESTRUCTION_PACKET">3</constant>
+    <constant name="GB">1000000000</constant>
+    <constant name="kB">1000</constant>
+    <constant name="MB">1000000</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
