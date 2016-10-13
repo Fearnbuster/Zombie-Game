@@ -8,48 +8,88 @@
   <sprites name="sprites">
     <sprites name="Characters">
       <sprites name="Player">
-        <sprite>sprites\spr_player_walking</sprite>
         <sprite>sprites\spr_player_hit_box</sprite>
-        <sprite>sprites\spr_bullet</sprite>
-        <sprite>sprites\spr_player_hat</sprite>
-        <sprite>sprites\spr_player_face</sprite>
-        <sprite>sprites\spr_player_bandana</sprite>
-        <sprite>sprites\spr_shirt</sprite>
-        <sprite>sprites\spr_player_backpack</sprite>
-        <sprites name="Player Pants">
-          <sprite>sprites\spr_player_pants_black</sprite>
-          <sprite>sprites\spr_player_pants_grey</sprite>
-          <sprite>sprites\spr_player_pants_white</sprite>
-          <sprite>sprites\spr_player_pants_red</sprite>
-          <sprite>sprites\spr_player_pants_gold</sprite>
-          <sprite>sprites\spr_player_pants_green</sprite>
-          <sprite>sprites\spr_player_pants_blue</sprite>
-          <sprite>sprites\spr_player_pants_pale_blue</sprite>
-          <sprite>sprites\spr_player_pants_purple</sprite>
-          <sprite>sprites\spr_player_pants_pink</sprite>
-          <sprite>sprites\spr_player_pants_orange</sprite>
-        </sprites>
-        <sprites name="Player Shoes">
-          <sprite>sprites\spr_player_shoes_black</sprite>
-          <sprite>sprites\spr_player_shoes_grey</sprite>
-          <sprite>sprites\spr_player_shoes_white</sprite>
-          <sprite>sprites\spr_player_shoes_red</sprite>
-          <sprite>sprites\spr_player_shoes_gold</sprite>
-          <sprite>sprites\spr_player_shoes_green</sprite>
-          <sprite>sprites\spr_player_shoes_blue</sprite>
-          <sprite>sprites\spr_player_shoes_pale_blue</sprite>
-          <sprite>sprites\spr_player_shoes_purple</sprite>
-          <sprite>sprites\spr_player_shoes_pink</sprite>
-          <sprite>sprites\spr_player_shoes_orange</sprite>
+        <sprite>sprites\spr_player_hand_empty</sprite>
+        <sprites name="Player Clothes">
+          <sprite>sprites\spr_player_normal_hat</sprite>
+          <sprite>sprites\spr_player_face</sprite>
+          <sprite>sprites\spr_player_bandana</sprite>
+          <sprite>sprites\spr_player_shirt</sprite>
+          <sprite>sprites\spr_player_backpack</sprite>
+          <sprites name="Player Pants">
+            <sprite>sprites\spr_player_pants_black</sprite>
+            <sprite>sprites\spr_player_pants_grey</sprite>
+            <sprite>sprites\spr_player_pants_white</sprite>
+            <sprite>sprites\spr_player_pants_red</sprite>
+            <sprite>sprites\spr_player_pants_gold</sprite>
+            <sprite>sprites\spr_player_pants_green</sprite>
+            <sprite>sprites\spr_player_pants_blue</sprite>
+            <sprite>sprites\spr_player_pants_pale_blue</sprite>
+            <sprite>sprites\spr_player_pants_purple</sprite>
+            <sprite>sprites\spr_player_pants_pink</sprite>
+            <sprite>sprites\spr_player_pants_orange</sprite>
+          </sprites>
+          <sprites name="Player Shoes">
+            <sprite>sprites\spr_player_shoes_black</sprite>
+            <sprite>sprites\spr_player_shoes_grey</sprite>
+            <sprite>sprites\spr_player_shoes_white</sprite>
+            <sprite>sprites\spr_player_shoes_red</sprite>
+            <sprite>sprites\spr_player_shoes_gold</sprite>
+            <sprite>sprites\spr_player_shoes_green</sprite>
+            <sprite>sprites\spr_player_shoes_blue</sprite>
+            <sprite>sprites\spr_player_shoes_pale_blue</sprite>
+            <sprite>sprites\spr_player_shoes_purple</sprite>
+            <sprite>sprites\spr_player_shoes_pink</sprite>
+            <sprite>sprites\spr_player_shoes_orange</sprite>
+          </sprites>
         </sprites>
         <sprites name="Guns">
-          <sprite>sprites\spr_player_M1911</sprite>
-          <sprite>sprites\spr_player_m16</sprite>
-          <sprite>sprites\spr_player_M249</sprite>
+          <sprites name="Pistol Attachments">
+            <sprites name="Pistol Sights">
+              <sprite>sprites\pistol_spr_red_dot_sight</sprite>
+              <sprite>sprites\pistol_spr_holo_sight</sprite>
+              <sprite>sprites\pistol_spr_reflex_sight</sprite>
+              <sprite>sprites\pistol_spr_scope</sprite>
+            </sprites>
+            <sprites name="Pistol Suppresser">
+              <sprite>sprites\pistol_spr_small_suppresser</sprite>
+              <sprite>sprites\pistol_spr_medium_suppresser</sprite>
+              <sprite>sprites\pistol_spr_large_suppresser</sprite>
+            </sprites>
+            <sprites name="Pistol Lasers">
+              <sprite>sprites\pistol_spr_laser</sprite>
+            </sprites>
+            <sprites name="Pistol Mags">
+              <sprite>sprites\pistol_spr_medium_mag</sprite>
+              <sprite>sprites\pistol_spr_large_mag</sprite>
+            </sprites>
+          </sprites>
+          <sprites name="Assault Rifle Attachments">
+            <sprite>sprites\M16_spr_sight</sprite>
+            <sprite>sprites\M16_spr_laser</sprite>
+            <sprite>sprites\M16_spr_mag</sprite>
+            <sprite>sprites\M16_spr_suppresser</sprite>
+          </sprites>
+          <sprites name="LMG Attachments">
+            <sprite>sprites\M249_spr_sight</sprite>
+            <sprite>sprites\M249_spr_laser</sprite>
+            <sprite>sprites\M249_spr_mag</sprite>
+            <sprite>sprites\M249_spr_suppresser</sprite>
+          </sprites>
+          <sprites name="Pistols">
+            <sprite>sprites\spr_M1911</sprite>
+          </sprites>
+          <sprites name="Assault Rifles">
+            <sprite>sprites\spr_M16</sprite>
+          </sprites>
+          <sprites name="Light Machine Guns">
+            <sprite>sprites\spr_M249</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Zombies">
         <sprite>sprites\spr_zombie_1</sprite>
+        <sprite>sprites\spr_zombie_eyes</sprite>
       </sprites>
     </sprites>
     <sprites name="Vegetation">
@@ -70,6 +110,7 @@
       <sprite>sprites\spr_fog_1</sprite>
       <sprite>sprites\spr_fog_2</sprite>
       <sprite>sprites\spr_barrier</sprite>
+      <sprite>sprites\spr_bullet</sprite>
     </sprites>
     <sprites name="Props">
       <sprite>sprites\spr_gravestone_cross_crooked</sprite>
@@ -77,13 +118,69 @@
     <sprites name="Menus">
       <sprite>sprites\spr_game_start_button</sprite>
       <sprite>sprites\spr_game_exit_button</sprite>
+    </sprites>
+    <sprites name="HUD">
+      <sprite>sprites\spr_xp_button</sprite>
+      <sprite>sprites\spr_shop_button</sprite>
+      <sprites name="Mouse Sights">
+        <sprite>sprites\spr_mouse_default</sprite>
+        <sprite>sprites\spr_mouse_red_dot</sprite>
+        <sprite>sprites\spr_mouse_holographic</sprite>
+        <sprite>sprites\spr_mouse_reflex</sprite>
+        <sprite>sprites\spr_mouse_scope</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Not Needed Right Now">
+      <sprites name="Shop">
+        <sprite>sprites\shop_spr_red_x</sprite>
+        <sprite>sprites\shop_spr_big_red_x</sprite>
+        <sprites name="M1911">
+          <sprite>sprites\shop_spr_M1911_title</sprite>
+          <sprite>sprites\shop_spr_M1911_supresser</sprite>
+          <sprite>sprites\shop_spr_M1911_laser</sprite>
+          <sprite>sprites\shop_spr_M1911_mag</sprite>
+          <sprite>sprites\shop_spr_M1911_sight</sprite>
+        </sprites>
+        <sprites name="M16">
+          <sprite>sprites\shop_spr_M16_title</sprite>
+          <sprite>sprites\shop_spr_M16_suppresser</sprite>
+          <sprite>sprites\shop_spr_M16_laser</sprite>
+          <sprite>sprites\shop_spr_M16_mag</sprite>
+          <sprite>sprites\shop_spr_M16_sight</sprite>
+        </sprites>
+        <sprite>sprites\spr_book_color_pallete</sprite>
+        <sprite>sprites\shop_spr_book_background</sprite>
+      </sprites>
+      <sprite>sprites\spr_image_arrow</sprite>
       <sprite>sprites\spr_customization</sprite>
       <sprite>sprites\spr_back_button</sprite>
-      <sprite>sprites\spr_image_arrow</sprite>
+      <sprite>sprites\spr_player_walking</sprite>
+      <sprite>sprites\spr_player_checks</sprite>
+      <sprite>sprites\spr_player_walking_back</sprite>
+      <sprite>sprites\spr_player_top_hat</sprite>
+    </sprites>
+    <sprites name="Shop">
+      <sprite>sprites\shop_spr_M1911</sprite>
+      <sprite>sprites\shop_spr_M16</sprite>
+      <sprite>sprites\shop_spr_M249</sprite>
+      <sprite>sprites\shop_spr_gun_button</sprite>
+      <sprite>sprites\shop_spr_firing_button</sprite>
+      <sprite>sprites\shop_spr_barrel_button</sprite>
+      <sprite>sprites\shop_spr_suppresser_button</sprite>
+      <sprite>sprites\shop_spr_sight_button</sprite>
+      <sprite>sprites\shop_spr_mag_button</sprite>
+      <sprite>sprites\shop_spr_laser_button</sprite>
+      <sprites name="Gun Class Names">
+        <sprite>sprites\shop_spr_class_pistol</sprite>
+        <sprite>sprites\shop_spr_class_assault_rifle</sprite>
+        <sprite>sprites\shop_spr_class_lmg</sprite>
+      </sprites>
+      <sprite>sprites\shop_spr_back_arrow</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkgd_night</background>
+    <background>background\bkgd_day</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -96,7 +193,6 @@
     <objects name="Characters">
       <objects name="Player">
         <object>objects\obj_player</object>
-        <object>objects\obj_player_gun</object>
         <object>objects\obj_player_hat</object>
         <object>objects\obj_player_face</object>
         <object>objects\obj_player_bandana</object>
@@ -105,7 +201,22 @@
         <object>objects\obj_player_pants</object>
         <object>objects\obj_player_shoes</object>
         <object>objects\obj_bullet</object>
-        <object>objects\obj_hud</object>
+        <objects name="Guns">
+          <object>objects\obj_player_gun</object>
+          <object>objects\obj_gun_control</object>
+          <objects name="M1911">
+            <object>objects\M1911_obj_suppresser</object>
+            <object>objects\M1911_obj_mag</object>
+            <object>objects\M1911_obj_laser</object>
+            <object>objects\M1911_obj_sight</object>
+          </objects>
+          <objects name="M16">
+            <object>objects\M16_obj_suppresser</object>
+            <object>objects\M16_obj_mag</object>
+            <object>objects\M16_obj_laser</object>
+            <object>objects\M16_obj_sight</object>
+          </objects>
+        </objects>
       </objects>
       <objects name="Zombies">
         <object>objects\obj_zombie_1</object>
@@ -139,29 +250,55 @@
       <object>objects\obj_game_exit_button</object>
       <object>objects\obj_customization_arrow</object>
       <object>objects\obj_back_arrow</object>
-      <objects name="Customization Arrows (Temporary)">
-        <object>objects\obj_hat_arrow_left</object>
-        <object>objects\obj_hat_arrow_right</object>
-        <object>objects\obj_face_arrow_left</object>
-        <object>objects\obj_face_arrow_right</object>
-        <object>objects\obj_bandana_arrow_left</object>
-        <object>objects\obj_bandana_arrow_right</object>
-        <object>objects\obj_shirt_arrow_left</object>
-        <object>objects\obj_shirt_arrow_right</object>
-        <object>objects\obj_backpack_arrow_left</object>
-        <object>objects\obj_backpack_arrow_right</object>
-        <object>objects\obj_pants_arrow_left</object>
-        <object>objects\obj_pants_arrow_right</object>
-        <object>objects\obj_shoes_arrow_left</object>
-        <object>objects\obj_shoes_arrow_right</object>
+    </objects>
+    <objects name="HUD">
+      <object>objects\obj_hud</object>
+      <object>objects\obj_xp_button</object>
+      <object>objects\obj_shop_button</object>
+      <object>objects\obj_mouse_sight</object>
+    </objects>
+    <objects name="Shop">
+      <object>objects\shop_obj_back_arrow</object>
+      <object>objects\shop_obj_control</object>
+      <objects name="Pistols">
+        <object>objects\shop_obj_M1911</object>
+      </objects>
+      <objects name="Assault Rifles">
+        <object>objects\shop_obj_M16</object>
+      </objects>
+      <objects name="Light Machine Guns">
+        <object>objects\shop_obj_M249</object>
+      </objects>
+      <objects name="Gun Buttons">
+        <object>objects\shop_obj_gun_button</object>
+        <object>objects\shop_obj_firing_button</object>
+        <object>objects\shop_obj_barrel_button</object>
+        <object>objects\shop_obj_suppresser_button</object>
+        <object>objects\shop_obj_sight_button</object>
+        <object>objects\shop_obj_mag_button</object>
+        <object>objects\shop_obj_laser_button</object>
+      </objects>
+      <objects name="Gun Class Names">
+        <object>objects\shop_obj_class_pistol</object>
+        <object>objects\shop_obj_class_assault_rifle</object>
+        <object>objects\shop_obj_class_lmg</object>
       </objects>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
-    <room>rooms\rm_menu_customization</room>
     <rooms name="Dark Forest">
       <room>rooms\rm_dark_forest_area_1</room>
+    </rooms>
+    <rooms name="Shop">
+      <room>rooms\rm_shop</room>
+      <room>rooms\shop_rm_gun</room>
+      <room>rooms\shop_rm_firing_rate</room>
+      <room>rooms\shop_rm_barrel</room>
+      <room>rooms\shop_rm_suppresser</room>
+      <room>rooms\shop_rm_sight</room>
+      <room>rooms\shop_rm_mag</room>
+      <room>rooms\shop_rm_laser</room>
     </rooms>
   </rooms>
   <help>

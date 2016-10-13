@@ -30,7 +30,7 @@
 Grav = 0.2;
 Vsp = 0;
 Health = 100;
-ZombieSpeed = choose(0.75,1,1.5,1.75);
+ZombieSpeed = choose(0.5,0.75,1);
 </string>
           </argument>
         </arguments>
@@ -53,7 +53,7 @@ ZombieSpeed = choose(0.75,1,1.5,1.75);
             <kind>1</kind>
             <string>///Changing Image Speed
 
-image_speed = ZombieSpeed/4;
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -78,11 +78,13 @@ image_speed = ZombieSpeed/4;
             <kind>1</kind>
             <string>///Moving Towards Player
 
-if (obj_player) &gt;= 320
+if distance_to_object(obj_player) &gt;= 720
     {
     if (hspeed != 0)
         {
         hspeed = 0;
+        image_speed = 0;
+        image_index = 0;
         }
     }
 else
@@ -91,6 +93,7 @@ if (x &lt; obj_player.x)
     if (hspeed != ZombieSpeed)
         {
         hspeed = ZombieSpeed;
+        image_speed = ZombieSpeed/4;
         }
     if (image_xscale != 1)
         {
@@ -103,6 +106,7 @@ if (x &gt; obj_player.x)
     if (hspeed != -ZombieSpeed)
         {
         hspeed = -ZombieSpeed;
+        image_speed = ZombieSpeed/4;
         }
     if (image_xscale != -1)
         {
@@ -115,6 +119,8 @@ if (x = obj_player.x)
     if (hspeed != 0)
         {
         hspeed = 0;
+        image_speed = 0;
+        image_index = 0;
         }
     }
 </string>
@@ -143,8 +149,8 @@ if (Health &lt;= 0)
     {
     with (self)
         {
-        obj_hud.Experience += 5;
-        obj_hud.Money += 15;
+        obj_hud.Experience += 1;
+        obj_hud.Money += 2;
         instance_destroy();
         }
     }
@@ -242,7 +248,7 @@ with (other)
     instance_destroy();
     }
 
-Health -= 34;
+Health -= 10;
 effect_create_above(ef_firework,x,y,0,c_red);
 </string>
           </argument>
@@ -268,8 +274,8 @@ effect_create_above(ef_firework,x,y,0,c_red);
             <kind>1</kind>
             <string>///Draw Health
 
-draw_healthbar(x - 32,y - 40,x,y - 32,Health,c_black,c_red,c_green,1,true,false);
-draw_healthbar(x,y - 40,x + 32,y - 32,Health,c_black,c_red,c_green,0,true,false);
+draw_healthbar(x - 32,y - 48,x,y - 40,Health,c_black,c_red,c_green,1,true,false);
+draw_healthbar(x,y - 48,x + 32,y - 40,Health,c_black,c_red,c_green,0,true,false);
 </string>
           </argument>
         </arguments>
@@ -290,7 +296,7 @@ draw_healthbar(x,y - 40,x + 32,y - 32,Health,c_black,c_red,c_green,0,true,false)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw Self
+            <string>///Draw Self and Eyes
 
 draw_self();
 </string>

@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>///Moving Towards Mouse Cursor
 
-move_towards_point(mouse_x,mouse_y,10);
+move_towards_point(mouse_x + 12,mouse_y + 12,25);
+image_angle = point_direction(x,y,mouse_x,mouse_y);
 </string>
           </argument>
         </arguments>

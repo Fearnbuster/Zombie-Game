@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>0</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,9 +25,39 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Setting Image Speed
+            <string>///Player Outfit Variables
 
-image_speed = 0;
+//Clothes Colors
+// 0 = Black, 1 = Grey, 2 = White, 3 = Red
+// 4 = Yellow, 5 = Green, 6 = Blue, 7 = Light Blue
+// 8 = Purple, 9 = Pink, 10 = Orange
+
+
+//Hat
+PlayerHat = spr_player_top_hat;
+PlayerHatColor = 7;
+
+//Face
+PlayerFace = spr_player_face;
+PlayerFaceColor = 0;
+
+//Bandana
+PlayerBandana = spr_player_bandana;
+PlayerBandanaColor = 2;
+
+//Shirt
+PlayerShirt = spr_player_shirt;
+PlayerShirtColor = 6;
+
+//Backpack
+PlayerBackpack = spr_player_backpack;
+PlayerBackpackColor = 7;
+
+//Pants
+PlayerPants = spr_player_pants_black;
+
+//Shoes
+PlayerShoes = spr_player_shoes_black;
 </string>
           </argument>
         </arguments>
@@ -166,43 +196,41 @@ KeyJump = keyboard_check(vk_space);
 Move = KeyLeft + KeyRight;
 Hsp = Move * MoveSpeed
 
-if (CanMove = true)
+
+//Gravity
+if (Vsp &lt; 10)
+{
+Vsp += Grav;
+}
+
+//Jumping
+if (place_meeting(x,y+1,obj_ground_parent))
     {
-    //Gravity
-    if (Vsp &lt; 10)
-    {
-    Vsp += Grav;
+    Vsp = KeyJump * -JumpSpeed;
     }
 
-    //Jumping
-    if (place_meeting(x,y+1,obj_ground_parent))
+//Horizontal Collision
+if (place_meeting(x + Hsp,y,obj_ground_parent))
+    {
+    while (!place_meeting(x + sign(Hsp),y,obj_ground_parent))
         {
-        Vsp = KeyJump * -JumpSpeed;
+        x += sign(Hsp);
         }
-
-    //Horizontal Collision
-    if (place_meeting(x + Hsp,y,obj_ground_parent))
-        {
-        while (!place_meeting(x + sign(Hsp),y,obj_ground_parent))
-            {
-            x += sign(Hsp);
-            }
-        Hsp = 0;
-        }
-
-    //Vertical Collision
-    if (place_meeting(x,y + Vsp,obj_ground_parent))
-        {
-        while (!place_meeting(x,y + sign(Vsp),obj_ground_parent))
-            {
-            y += sign(Vsp);
-            }
-        Vsp = 0;
-        }
-
-    x += Hsp;
-    y += Vsp;
+    Hsp = 0;
     }
+
+//Vertical Collision
+if (place_meeting(x,y + Vsp,obj_ground_parent))
+    {
+    while (!place_meeting(x,y + sign(Vsp),obj_ground_parent))
+        {
+        y += sign(Vsp);
+        }
+    Vsp = 0;
+    }
+
+x += Hsp;
+y += Vsp;
 </string>
           </argument>
         </arguments>
