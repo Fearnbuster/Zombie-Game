@@ -102,7 +102,9 @@ image_index = 1;
             <kind>1</kind>
             <string>///Go To Customization Room
 
-room_goto(rm_menu_customization);
+//room_goto(rm_menu_customization);
+
+show_message("Not Working Right Now");
 </string>
           </argument>
         </arguments>
