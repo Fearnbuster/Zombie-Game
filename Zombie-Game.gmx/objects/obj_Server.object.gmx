@@ -27,43 +27,25 @@
             <kind>1</kind>
             <string>///Initialize networking
 
-// Determines whether or not the device that is currently running 
-// this game is the host.
-isHost                  = true;
+// ----------------------------------------
+IS_HOST                 = true;
 
 // The port on which network data is transfered.
-dataTransferPort        = 37373;
+// 
+mDataTransferPort        = 37373;
 
-// Indicator of how many frames should elapse between each 
-// network update of the server. 
-// The server's tps (ticks per second) is equal to the
-// the game's fps divided by the server's network timer
-// (fps/timer).
-// Example: If the game runs at 60fps and the server has a 15 
-// frame timer, then the server will send network updates 4 times 
-// per second (60fps/15 frames = 4tps). 
-// NOTE: Setting the value here is needed only if this device is 
-// the host, otherwise, it is retrieved from the server.
-// NOTE: Unless the network bandwith is very low, you should keep 
-// the update timer small enough that the server tps never falls 
-// below 10 (a greater value may be preferable).
-serverUpdateTimer = 15;
+mMaxNumberOfPlayers     = 4;
 
 
 // ----------------------------------------
-if (isHost)
+// Create the server:
+// Loop untill a port is found that works
+while(!(serverSocket = network_create_server(network_socket_tcp, 
+    dataTransferPort, maxNumberOfPlayers)))
 {
-    maxNumberOfPlayers     = 4;
-
-    // Create the server:
-    serverSocket = network_create_server(network_socket_tcp, 
-                dataTransferPort, maxNumberOfPlayers);
-                
-    if (serverSocket &lt; 0)
-    {
-        show_error("Cannot create server!", false);
-    }
+    show_error("Cannot create server!", false);
 }
+
 
 else // is not the host
 {

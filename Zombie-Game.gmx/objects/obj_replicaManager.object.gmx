@@ -42,6 +42,24 @@ mFreeReplicaIDs = ds_list_create();
 mHighestReplicaID = 0;
 
 
+// Indicator of how many frames should elapse between each 
+// update of the replica objects. 
+// The replica manager's tps (ticks per second) is equal to the
+// the game's fps divided by the update delay (fps/delay).
+// Example: If the game runs at 60fps and the replica manager has 
+// a 15 frame delay, then the replica manager will send replica 
+// updates 4 times per second (60fps/15 frames = 4tps). 
+// NOTE: Setting the value here is needed only if this device is 
+// the host, otherwise, it is retrieved from the host.
+// NOTE: Unless the network bandwith is very low, you should keep 
+// the update delay small enough that the replica manager's tps 
+// never falls below 10 (a greater value may be preferable).
+updateDelay = 15;
+
+// This is the varible that is used to count down the steps 
+// between each replica manager update.
+updateTimer = 15;
+
 // --------------------------
 // Script handles: 
 // Used when creating a new replica object on the network.
@@ -59,6 +77,42 @@ serializeReplicaObject = scr_serializeReplicaObject;
 // the replica objects).
 updateReplicaNetwork = scr_updateReplicaNetwork;
 
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Update cycle
+
+updateTimer -= 1;
+
+// --------------------------
+if (updateTimer &lt;= 0)
+{
+    scr_updateReplicaNetwork(self);
+    
+    // --------------------------
+    updateTimer = updateDelay; // reset timer
+}
 
 
 </string>
