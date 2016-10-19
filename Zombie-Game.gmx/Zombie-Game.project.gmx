@@ -177,6 +177,8 @@
       </sprites>
       <sprite>sprites\shop_spr_back_arrow</sprite>
     </sprites>
+    <sprite>sprites\spr_nighttime</sprite>
+    <sprite>sprites\spr_night</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkgd_night</background>
@@ -284,6 +286,8 @@
         <object>objects\shop_obj_class_lmg</object>
       </objects>
     </objects>
+    <object>objects\obj_night_rectangle</object>
+    <object>objects\obj_time_cycle</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

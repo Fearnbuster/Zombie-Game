@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>8</width>
+  <width>3200</width>
   <height>960</height>
   <data>images\bkgd_night.png</data>
 </background>
