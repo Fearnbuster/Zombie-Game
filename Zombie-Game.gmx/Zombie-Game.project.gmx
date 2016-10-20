@@ -11,37 +11,37 @@
         <sprite>sprites\spr_player_hit_box</sprite>
         <sprite>sprites\spr_player_hand_empty</sprite>
         <sprites name="Player Clothes">
-            <sprite>sprites\spr_player_normal_hat</sprite>
-            <sprite>sprites\spr_player_face</sprite>
-            <sprite>sprites\spr_player_bandana</sprite>
-            <sprite>sprites\spr_player_shirt</sprite>
-            <sprite>sprites\spr_player_backpack</sprite>
-            <sprites name="Player Pants">
-              <sprite>sprites\spr_player_pants_black</sprite>
-              <sprite>sprites\spr_player_pants_grey</sprite>
-              <sprite>sprites\spr_player_pants_white</sprite>
-              <sprite>sprites\spr_player_pants_red</sprite>
-              <sprite>sprites\spr_player_pants_gold</sprite>
-              <sprite>sprites\spr_player_pants_green</sprite>
-              <sprite>sprites\spr_player_pants_blue</sprite>
-              <sprite>sprites\spr_player_pants_pale_blue</sprite>
-              <sprite>sprites\spr_player_pants_purple</sprite>
-              <sprite>sprites\spr_player_pants_pink</sprite>
-              <sprite>sprites\spr_player_pants_orange</sprite>
-            </sprites>
-            <sprites name="Player Shoes">
-              <sprite>sprites\spr_player_shoes_black</sprite>
-              <sprite>sprites\spr_player_shoes_grey</sprite>
-              <sprite>sprites\spr_player_shoes_white</sprite>
-              <sprite>sprites\spr_player_shoes_red</sprite>
-              <sprite>sprites\spr_player_shoes_gold</sprite>
-              <sprite>sprites\spr_player_shoes_green</sprite>
-              <sprite>sprites\spr_player_shoes_blue</sprite>
-              <sprite>sprites\spr_player_shoes_pale_blue</sprite>
-              <sprite>sprites\spr_player_shoes_purple</sprite>
-              <sprite>sprites\spr_player_shoes_pink</sprite>
-              <sprite>sprites\spr_player_shoes_orange</sprite>
-            </sprites>
+          <sprite>sprites\spr_player_normal_hat</sprite>
+          <sprite>sprites\spr_player_face</sprite>
+          <sprite>sprites\spr_player_bandana</sprite>
+          <sprite>sprites\spr_player_shirt</sprite>
+          <sprite>sprites\spr_player_backpack</sprite>
+          <sprites name="Player Pants">
+            <sprite>sprites\spr_player_pants_black</sprite>
+            <sprite>sprites\spr_player_pants_grey</sprite>
+            <sprite>sprites\spr_player_pants_white</sprite>
+            <sprite>sprites\spr_player_pants_red</sprite>
+            <sprite>sprites\spr_player_pants_gold</sprite>
+            <sprite>sprites\spr_player_pants_green</sprite>
+            <sprite>sprites\spr_player_pants_blue</sprite>
+            <sprite>sprites\spr_player_pants_pale_blue</sprite>
+            <sprite>sprites\spr_player_pants_purple</sprite>
+            <sprite>sprites\spr_player_pants_pink</sprite>
+            <sprite>sprites\spr_player_pants_orange</sprite>
+          </sprites>
+          <sprites name="Player Shoes">
+            <sprite>sprites\spr_player_shoes_black</sprite>
+            <sprite>sprites\spr_player_shoes_grey</sprite>
+            <sprite>sprites\spr_player_shoes_white</sprite>
+            <sprite>sprites\spr_player_shoes_red</sprite>
+            <sprite>sprites\spr_player_shoes_gold</sprite>
+            <sprite>sprites\spr_player_shoes_green</sprite>
+            <sprite>sprites\spr_player_shoes_blue</sprite>
+            <sprite>sprites\spr_player_shoes_pale_blue</sprite>
+            <sprite>sprites\spr_player_shoes_purple</sprite>
+            <sprite>sprites\spr_player_shoes_pink</sprite>
+            <sprite>sprites\spr_player_shoes_orange</sprite>
+          </sprites>
         </sprites>
         <sprites name="Guns">
           <sprites name="Pistol Attachments">
@@ -407,7 +407,7 @@
         </objects>
         <objects name="Proxy">
           <object>objects\obj_player_proxy</object>
-	</objects>
+        </objects>
         <object>objects\obj_player_hat</object>
         <object>objects\obj_player_face</object>
         <object>objects\obj_player_bandana</object>

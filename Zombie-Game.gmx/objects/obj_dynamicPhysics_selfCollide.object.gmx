@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="4" ename="obj_dynamicPhysics_noSelfCollide">
+    <event eventtype="4" ename="obj_staticPhysicsParent">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -31,7 +31,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_staticPhysicsParent">
+    <event eventtype="4" ename="obj_dynamicPhysics_noSelfCollide">
       <action>
         <libid>1</libid>
         <id>603</id>
