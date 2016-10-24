@@ -25,59 +25,6 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Player Outfit Variables
-
-//Clothes Colors
-// 0 = Black, 1 = Grey, 2 = White, 3 = Red
-// 4 = Yellow, 5 = Green, 6 = Blue, 7 = Light Blue
-// 8 = Purple, 9 = Pink, 10 = Orange
-
-
-//Hat
-PlayerHat = spr_player_top_hat;
-PlayerHatColor = 7;
-
-//Face
-PlayerFace = spr_player_face;
-PlayerFaceColor = 0;
-
-//Bandana
-PlayerBandana = spr_player_bandana;
-PlayerBandanaColor = 2;
-
-//Shirt
-PlayerShirt = spr_player_shirt;
-PlayerShirtColor = 6;
-
-//Backpack
-PlayerBackpack = spr_player_backpack;
-PlayerBackpackColor = 7;
-
-//Pants
-PlayerPants = spr_player_pants_black;
-
-//Shoes
-PlayerShoes = spr_player_shoes_black;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Variables
 
 // Variables for Movement
@@ -123,7 +70,7 @@ instance_create(x,y,obj_player_shoes);
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -140,25 +87,14 @@ instance_create(x,y,obj_player_shoes);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Changing Image XScale and Image Speed
+            <string>/// Update controls
 
-//Facing Left
-if (mouse_x &lt; x)
-    {
-    if (image_xscale != -1)
-        {
-        image_xscale = -1;
-        }
-    }
+// ----------------------------------------------------
+PressedJump    = keyboard_check_pressed(vk_up);
+PressedLeft    = keyboard_check(vk_left);
+PressedRight   = keyboard_check(vk_right);
 
-//Facing Right
-if (mouse_x &gt; x)
-    {
-    if (image_xscale != 1)
-        {
-        image_xscale = 1;
-        }
-    }
+
 </string>
           </argument>
         </arguments>
@@ -179,53 +115,54 @@ if (mouse_x &gt; x)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Player Movement and Collision
+            <string>/// Update heading
 
-
-//Setting up Variables
-KeyRight = keyboard_check(ord("D"));
-KeyLeft = -keyboard_check(ord("A"));
-KeyJump = keyboard_check(vk_space);
-
-//Movement
-Move = KeyLeft + KeyRight;
-Hsp = Move * MoveSpeed
-
-
-//Gravity
-if (Vsp &lt; 10)
+// Facing left
+if (mouse_x &lt; x)
 {
-Vsp += Grav;
+    image_xscale = -1;
 }
 
-//Jumping
-if (place_meeting(x,y+1,obj_ground_parent))
-    {
-    Vsp = KeyJump * -JumpSpeed;
-    }
+// Facing right
+else if (mouse_x &gt; x)
+{
+    image_xscale = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Sync-in variables
 
-//Horizontal Collision
-if (place_meeting(x + Hsp,y,obj_ground_parent))
-    {
-    while (!place_meeting(x + sign(Hsp),y,obj_ground_parent))
-        {
-        x += sign(Hsp);
-        }
-    Hsp = 0;
-    }
+// ----------------------------------------------------
+mp_map_syncIn("PressedJump",PressedJump);
+mp_map_syncIn("PressedLeft",PressedLeft);
+mp_map_syncIn("PressedRight",PressedRight);
 
-//Vertical Collision
-if (place_meeting(x,y + Vsp,obj_ground_parent))
-    {
-    while (!place_meeting(x,y + sign(Vsp),obj_ground_parent))
-        {
-        y += sign(Vsp);
-        }
-    Vsp = 0;
-    }
+// ----------------------------------------------------
+mp_map_syncIn("positionX",self.phy_position_x);
+mp_map_syncIn("positionY",self.phy_position_y);
 
-x += Hsp;
-y += Vsp;
+// ----------------------------------------------------
+mp_map_syncIn("speedX",self.phy_speed_x);
+mp_map_syncIn("speedY",self.phy_speed_y);
+
 </string>
           </argument>
         </arguments>

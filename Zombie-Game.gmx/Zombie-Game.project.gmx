@@ -402,7 +402,7 @@
           <object>objects\obj_player_parent</object>
           <object>objects\obj_player_new</object>
         </objects>
-        <objects name="Smart">
+        <objects name="Original">
           <object>objects\obj_player</object>
         </objects>
         <objects name="Proxy">

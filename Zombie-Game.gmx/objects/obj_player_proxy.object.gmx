@@ -25,9 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Setting Image Speed
+            <string>/// Run parent event
 
-image_speed = 0;
+event_inherited();
 </string>
           </argument>
         </arguments>
@@ -48,22 +48,26 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Variables
+            <string>/// Declare variables
 
-//Variables for Movement
-MoveSpeed = 2;
-JumpSpeed = 4;
-Hsp = 0;
-Vsp = 0;
+// ----------------------------------------------------
+// Used to determine whether or not the player's movement
+// should be set to its corresponding value that is 
+// synced within the GMnet engine.
+mCurPositionX    = 0;
+mCurPositionY    = 0;
+mLastPositionX   = 0;
+mLastPositionY   = 0;
 
-//Variables for Gravity
-Grav = 0.2;
+// ----------------------------------------------------
+// Used to determine whether or not the player's speed
+// should be set to its corresponding value that is 
+// synced within the GMnet engine.
+mCurSpeedX   = 0;
+mCurSpeedY   = 0;
+mLastSpeedX  = 0;
+mLastSpeedY  = 0;
 
-///Health
-Health = 100;
-
-//Other Variables
-CanMove = false;
 </string>
           </argument>
         </arguments>
@@ -98,7 +102,7 @@ instance_create(x,y,obj_player_shoes);
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -115,25 +119,24 @@ instance_create(x,y,obj_player_shoes);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Changing Image XScale and Image Speed
+            <string>/// Sync-out variables
 
-//Facing Left
-if (mouse_x &lt; x)
-    {
-    if (image_xscale != -1)
-        {
-        image_xscale = -1;
-        }
-    }
+// ----------------------------------------------------
+// Controls:
+PressedJump     = mp_map_syncOut("PressedJump", PressedJump);
+PressedLeft     = mp_map_syncOut("PressedLeft", PressedLeft);
+PressedRight    = mp_map_syncOut("PressedRight", PressedRight);
 
-//Facing Right
-if (mouse_x &gt; x)
-    {
-    if (image_xscale != 1)
-        {
-        image_xscale = 1;
-        }
-    }
+// ----------------------------------------------------
+// Position:
+curPositionX = mp_map_syncOut("positionX", htme_curPositionX);
+curPositionY = mp_map_syncOut("positionY", htme_curPositionY);
+
+// ----------------------------------------------------
+// Speed:
+curSpeedX = mp_map_syncOut("speedX", curSpeedX);
+curSpeedY = mp_map_syncOut("speedY", curSpeedY);
+
 </string>
           </argument>
         </arguments>
@@ -154,55 +157,60 @@ if (mouse_x &gt; x)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Player Movement and Collision
+            <string>/// Update speed/position
+
+// ----------------------------------------------------
+// Change position only if there has been a change: 
+if (mCurPositionX != mLastPositionX)
+{
+    phy_position_x  = mCurPositionX;
+    mLastPositionX  = mCurPositionX;
+}
+
+if (mCurPositionY != mLastPositionY)
+{
+    phy_position_y  = mCurPositionY;
+    mLastPositionY  = mCurPositionY
+}
 
 
-//Setting up Variables
-KeyRight = keyboard_check(ord("D"));
-KeyLeft = -keyboard_check(ord("A"));
-KeyJump = keyboard_check(vk_space);
+// ----------------------------------------------------
+// Change speed only if there has been a change:
+if (mCurSpeedX != mLastSpeedX)
+{
+    phy_speed_x = mCurSpeedX;
+    mLastSpeedX = mCurSpeedX;
+}
 
-//Movement
-Move = KeyLeft + KeyRight;
-Hsp = Move * MoveSpeed
+if (mCurSpeedY != mLastSpeedY)
+{
+    phy_speed_y = mCurSpeedY;
+    mLastSpeedY = mCurSpeedY
+}
 
-if (CanMove = true)
-    {
-    //Gravity
-    if (Vsp &lt; 10)
-    {
-    Vsp += Grav;
-    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Run parent's event
 
-    //Jumping
-    if (place_meeting(x,y+1,obj_ground_parent))
-        {
-        Vsp = KeyJump * -JumpSpeed;
-        }
-
-    //Horizontal Collision
-    if (place_meeting(x + Hsp,y,obj_ground_parent))
-        {
-        while (!place_meeting(x + sign(Hsp),y,obj_ground_parent))
-            {
-            x += sign(Hsp);
-            }
-        Hsp = 0;
-        }
-
-    //Vertical Collision
-    if (place_meeting(x,y + Vsp,obj_ground_parent))
-        {
-        while (!place_meeting(x,y + sign(Vsp),obj_ground_parent))
-            {
-            y += sign(Vsp);
-            }
-        Vsp = 0;
-        }
-
-    x += Hsp;
-    y += Vsp;
-    }
+event_inherited();
 </string>
           </argument>
         </arguments>

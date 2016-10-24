@@ -163,24 +163,7 @@ if (!htme_isLocal())
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (htme_isLocal())
-{ 
-    self.PressedJump = keyboard_check_pressed(vk_up);
-    self.PressedLeft = keyboard_check(vk_left);
-    self.PressedRight = keyboard_check(vk_right);
-
-    mp_map_syncIn("PressedJump",PressedJump);
-    mp_map_syncIn("PressedLeft",PressedLeft);
-    mp_map_syncIn("PressedRight",PressedRight);
-    
-    mp_map_syncIn("positionX",self.phy_position_x);
-    mp_map_syncIn("positionY",self.phy_position_y);
-    
-    mp_map_syncIn("speedX",self.phy_speed_x);
-    mp_map_syncIn("speedY",self.phy_speed_y);
-}
-    
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
