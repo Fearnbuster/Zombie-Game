@@ -501,7 +501,7 @@
     </objects>
     <object>objects\obj_gameInitializer</object>
     <objects name="htme">
-      <object>objects\obj_htme</object>
+      <object>objects\htme_obj_GMnetInitializer</object>
       <object>objects\htme_obj_menu</object>
       <object>objects\htme_obj_netcontrol</object>
       <object>objects\htme_obj_wait_for_client</object>
@@ -515,10 +515,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\htme_rom_menu</room>
-    <room>rooms\rm_level_1</room>
-    <room>rooms\htme_rm_connecting</room>
     <room>rooms\rm_main_menu</room>
+    <room>rooms\htme_rm_connecting</room>
     <rooms name="Dark Forest">
       <room>rooms\rm_dark_forest_area_1</room>
     </rooms>

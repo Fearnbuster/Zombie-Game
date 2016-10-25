@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>-9999</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -50,11 +50,15 @@ htme_init();
           <argument>
             <kind>1</kind>
             <string>///Disconnect or kick clients if started
-if (!self.isConnected) exit;
+if (!self.isConnected) 
+    exit;
 
-if (self.isServer) {
+if (self.isServer) 
+{
     htme_serverShutdown();
-} else {
+} 
+else 
+{
     htme_clientDisconnect();
 }
 </string>
@@ -79,7 +83,7 @@ if (self.isServer) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///htme_step(); - Pass step event to the engine
+            <string>/// Pass step event to GMnet
 htme_step();
 </string>
           </argument>
@@ -103,7 +107,7 @@ htme_step();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///htme_networking(); - Pass networking event to the engine
+            <string>/// Pass networking event to the engine
 htme_networking();
 </string>
           </argument>
@@ -127,7 +131,7 @@ htme_networking();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///htme_roomend(); - Clear up instances
+            <string>/// Clear up instances
 htme_roomend();
 </string>
           </argument>
@@ -151,7 +155,7 @@ htme_roomend();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///htme_roomstart(); - Sync current room
+            <string>/// Sync current room
 htme_roomstart();
 </string>
           </argument>
@@ -176,11 +180,15 @@ htme_roomstart();
           <argument>
             <kind>1</kind>
             <string>///Disconnect or kick clients if started
-if (!self.isConnected) exit;
+if (!self.isConnected) 
+    exit;
 
-if (self.isServer) {
+if (self.isServer) 
+{
     htme_serverShutdown();
-} else {
+} 
+else 
+{
     htme_clientDisconnect();
 }
 </string>
@@ -205,7 +213,7 @@ if (self.isServer) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///htme_debugoverlay(); - Draw debug overlay
+            <string>/// Draw debug overlay
 htme_debugoverlay();
 </string>
           </argument>

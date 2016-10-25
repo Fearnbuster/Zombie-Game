@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -35,7 +35,7 @@ if keyboard_check_pressed(ord('C'))
         //Starting Server
         if (htme_serverStart(Port,32))
         {
-            room_goto(rm_level_1)
+            room_goto(rm_dark_forest_area_1)
         }
         else
         {

@@ -84,6 +84,8 @@
     <instance objName="shop_obj_control" x="12" y="12" name="inst_4EBC3F7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_gun_control" x="36" y="12" name="inst_0724D5ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mouse_sight" x="96" y="112" name="inst_50687B4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="htme_obj_GMnetInitializer" x="64" y="16" name="inst_671A5BF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="htme_obj_menu" x="144" y="176" name="inst_42FA3B62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
