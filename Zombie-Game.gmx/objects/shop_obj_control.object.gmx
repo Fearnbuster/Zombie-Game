@@ -28,25 +28,25 @@
             <string>///Gun Variables
 
 //M1911
-M1911Bought = true;
-M1911SuppresserBought = false;
-M1911LaserBought = false;
-M1911MagBought = false;
-M1911SightBought = false;
+M1911Bought             = true;
+M1911SuppresserBought   = false;
+M1911LaserBought        = false;
+M1911MagBought          = false;
+M1911SightBought        = false;
 
 //M16
-M16Bought = false;
+M16Bought           = false;
 M16SuppresserBought = false;
-M16LaserBought = false;
-M16MagBought = false;
-M16SightBought = false;
+M16LaserBought      = false;
+M16MagBought        = false;
+M16SightBought      = false;
 
 //M249
-M249Bought = false;
-M249SuppresserBought = false;
-M249LaserBought = false;
-M249MagBought = false;
-M249SightBought = false;
+M249Bought              = false;
+M249SuppresserBought    = false;
+M249LaserBought         = false;
+M249MagBought           = false;
+M249SightBought         = false;
 </string>
           </argument>
         </arguments>

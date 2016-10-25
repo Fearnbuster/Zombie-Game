@@ -362,6 +362,7 @@ if (obj_gun_control.M249Selected = true)
       </action>
       <action>
         <libid>1</libid>
+<<<<<<< HEAD
         <id>605</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -417,6 +418,8 @@ if (obj_time_cycle.PM = true)
       </action>
       <action>
         <libid>1</libid>
+=======
+>>>>>>> origin/master
         <id>424</id>
         <kind>2</kind>
         <userelative>0</userelative>
