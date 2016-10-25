@@ -209,7 +209,7 @@
           <objects name="M1911">
             <object>objects\M1911_obj_suppresser</object>
             <object>objects\M1911_obj_mag</object>
-            <object>objects\M1911_obj_laser</object>
+            <object>objects\pistol_obj_laser</object>
             <object>objects\M1911_obj_sight</object>
           </objects>
           <objects name="M16">
@@ -286,7 +286,7 @@
         <object>objects\shop_obj_class_lmg</object>
       </objects>
     </objects>
-    <object>objects\obj_night_rectangle</object>
+    <object>objects\obj_night_surface</object>
     <object>objects\obj_time_cycle</object>
   </objects>
   <rooms name="rooms">

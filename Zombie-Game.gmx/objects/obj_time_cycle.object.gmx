@@ -3,7 +3,7 @@
   <spriteName>spr_nighttime</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>500</depth>
+  <depth>999</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Changing Image Alpha
 
-image_alpha = 0;
+image_alpha = 1;
 </string>
           </argument>
         </arguments>
@@ -238,7 +238,7 @@ if (obj_time_cycle.PM = true)
     {
     if (obj_time_cycle.Hour = 7)
         {
-        if (obj_time_cycle.Minute = 34)
+        if (obj_time_cycle.Minute = 54)
             {
             alarm[0] = 60;
             }

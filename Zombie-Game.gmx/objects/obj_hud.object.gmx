@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-999</depth>
+  <depth>-99998</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -397,18 +397,19 @@ if (obj_gun_control.M249Selected = true)
           <argument>
             <kind>1</kind>
             <string>///Clock
-
+draw_set_font(fnt_hud);
 draw_set_color(c_white);
-draw_text(480,400,obj_time_cycle.Minute);
-draw_text(480,440,obj_time_cycle.Hour);
+draw_text(view_xview + 500,view_yview + 32,obj_time_cycle.Hour);
+draw_text(view_xview + 516,view_yview + 32,":");
+draw_text(view_xview + 526,view_yview + 32,obj_time_cycle.Minute);
 if (obj_time_cycle.AM = true)
     {
-    draw_text(480,480,"AM");
+    draw_text(view_xview + 32,view_yview + 480,"AM");
     }
 else
 if (obj_time_cycle.PM = true)
     {
-    draw_text(480,480,"PM");
+    draw_text(view_xview + 32,view_yview + 480,"PM");
     }
 </string>
           </argument>
